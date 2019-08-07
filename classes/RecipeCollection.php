@@ -10,7 +10,6 @@ class RecipeCollection
     /**
      * RecipeCollection constructor.
      * @param $title
-     * @param array $recipes
      */
 
     public function __construct($title)
@@ -44,9 +43,9 @@ class RecipeCollection
     }
 
     /**
-     * @param object $recipes
+     * @param Recipe ...$recipes
      */
-    public function setRecipes(object ...$recipes): void
+    public function setRecipes(Recipe ...$recipes): void
     {
         $this->recipes = $recipes;
     }
