@@ -25,8 +25,15 @@ $cookbook->setRecipes(
         $granola,
         $spicy_omelette,
         $scones,
-    );
+        );
 
 
-echo Render::listRecipes($cookbook->getRecipeTitles());
 
+
+$breakfast = new RecipeCollection("Breakfast for the Morning");
+
+foreach ($cookbook->getRecipesByTag("breakfast") as $recipe) {
+    $breakfast->setRecipes($recipe);
+}
+
+echo Render::listRecipes($breakfast->getRecipeTitles());

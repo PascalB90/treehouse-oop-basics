@@ -42,12 +42,22 @@ class RecipeCollection
         return $this->recipes;
     }
 
-    /**
+    /*
      * @param Recipe ...$recipes
      */
+
     public function setRecipes(Recipe ...$recipes): void
     {
-        $this->recipes = $recipes;
+        if (is_array($recipes)){
+            foreach ($recipes as $recipe) {
+                $this->recipes[] = $recipe;
+            }
+        }  else {
+
+            $this->recipes[] = $recipes;
+        }
+
+
     }
 
     /**
@@ -64,6 +74,29 @@ class RecipeCollection
         }
 
         return $titles;
+
+    }
+
+    /**
+     * @param String $tag
+     * @return array
+     */
+
+    public function getRecipesByTag(String $tag)
+    {
+        $taggedRecipes = [];
+
+        /**
+         * @var Recipe $recipe
+         */
+
+        foreach ($this->recipes as $recipe) {
+            if(in_array(strtolower($tag),$recipe->getTags())){
+                $taggedRecipes[] = $recipe;
+            }
+        }
+
+        return $taggedRecipes;
 
     }
 
