@@ -28,3 +28,5 @@ $cookbook->setRecipes(
     );
 
 
+echo Render::listRecipes($cookbook->getRecipeTitles());
+

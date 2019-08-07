@@ -50,4 +50,21 @@ class RecipeCollection
         $this->recipes = $recipes;
     }
 
+    /**
+     * @return array
+     */
+
+    public function getRecipeTitles(): array
+    {
+
+        $titles = [];
+
+        foreach ($this->recipes as $recipe) {
+            $titles[] = $recipe->getTitle();
+        }
+
+        return $titles;
+
+    }
+
 }

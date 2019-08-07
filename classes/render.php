@@ -8,6 +8,18 @@ class Render
         $output .= implode("\n", get_class_methods(__CLASS__));
         return $output;
     }
+
+    /**
+     * @param array $recipes
+     * @return string
+     */
+
+    public static function listRecipes(Array $recipes): string {
+
+        asort($recipes);
+        return implode("\n",$recipes);
+
+    }
     
     public static function listIngredients($ingredients)
     {
