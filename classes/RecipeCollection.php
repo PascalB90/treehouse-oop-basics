@@ -82,7 +82,7 @@ class RecipeCollection
      * @return array
      */
 
-    public function getRecipesByTag(String $tag)
+    public function getRecipesByTag(String $tag) :array
     {
         $taggedRecipes = [];
 
@@ -97,6 +97,50 @@ class RecipeCollection
         }
 
         return $taggedRecipes;
+
+    }
+
+
+    /**
+     * @return array
+     */
+
+    public function combinedIngredients() :array
+    {
+
+        $combinedIngredients = [];
+
+        /**
+         * @var Recipe $recipe
+         */
+
+        foreach ($this->recipes as $recipe) {
+            foreach ($recipe->getIngredients() as $ingredient) {
+
+                $item = $ingredient['item'];
+
+                if(strpos($item, ",")) {
+                    $item = strstr($item, ",", true);
+                }
+
+                if(substr($item, -1) == "s" && array_key_exists(rtrim($item,"s"),$combinedIngredients)){
+                    $item = rtrim($item, "s");
+                } elseif (array_key_exists($item . "s", $combinedIngredients)) {
+
+                        $item .= "s";
+                }
+
+
+                $combinedIngredients[$item] = array(
+                    $ingredient['amount'],
+                    $ingredient['measure']
+                );
+
+        }
+
+        }
+
+        return $combinedIngredients;
 
     }
 

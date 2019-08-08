@@ -6,7 +6,7 @@ class Recipe
     private $ingredients = array();
     private $instructions = array();
     private $yield;
-    private $tag = array();
+    private $tags = array();
     private $source = "Alena Holligan";
     
     private $measurements = array(

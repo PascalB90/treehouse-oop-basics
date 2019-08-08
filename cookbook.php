@@ -36,4 +36,4 @@ foreach ($cookbook->getRecipesByTag("breakfast") as $recipe) {
     $breakfast->setRecipes($recipe);
 }
 
-echo Render::listRecipes($breakfast->getRecipeTitles());
+echo Render::listShopping($breakfast->combinedIngredients());

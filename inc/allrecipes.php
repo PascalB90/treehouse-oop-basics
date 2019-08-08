@@ -76,11 +76,12 @@ $granola_muffins->addInstruction("Combine wet and dry mixtures and fold together
 $granola_muffins->addInstruction("*An hour before you want to make these (or at least a half hour) mix your milk of choice with the white vinegar and allow it to \"sour\" at room temperature.");
 
 $granola_muffins->setYield("12 large muffins.");
-$granola_muffins->addTag("breakfast, snack, quick bread");/**/
+$granola_muffins->addTag("breakfast", "snack", "quick bread");
 
 
 $belgian_waffles = new Recipe("Belgian Waffles");
 
+$belgian_waffles->addIngredient("Eggs", 2);
 $belgian_waffles->addIngredient("Egg", 2);
 $belgian_waffles->addIngredient("Butter", 1, "Cup");
 $belgian_waffles->addIngredient("sugar", .5, "Cup");
@@ -98,7 +99,7 @@ $belgian_waffles->addInstruction("Follow instructions on waffle maker or add .5 
 
 $belgian_waffles->setYield("10 waffles");
 $belgian_waffles->setSource("Alena Holligan");
-$belgian_waffles->addTag("breakfast, quick bread");
+$belgian_waffles->addTag("breakfast", "quick bread");
 
 
 $pepper_casserole = new Recipe("Ground Turkey Pepper Casserole");
@@ -149,7 +150,7 @@ $lasagna->addInstruction("Bake in preheated oven for 60 minutes. Remove foil, an
 
 $lasagna->setYield("12 servings");
 $lasagna->setSource("Alena Holligan");
-$lasagna->addTag("dinner,italian");
+$lasagna->addTag("dinner","italian");
 
 
 //Ken Alger

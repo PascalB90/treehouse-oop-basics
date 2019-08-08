@@ -20,6 +20,14 @@ class Render
         return implode("\n",$recipes);
 
     }
+
+    public static function listShopping($ingredients)
+    {
+
+        ksort($ingredients);
+        return implode("\n",array_keys($ingredients));
+
+    }
     
     public static function listIngredients($ingredients)
     {
